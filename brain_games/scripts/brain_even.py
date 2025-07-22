@@ -1,4 +1,4 @@
-from random import randint
+from secrets import randbelow
 
 from brain_games.cli import get_answer, welcome_user
 
@@ -10,7 +10,7 @@ def main() -> None:
     print('Answer "yes" if the number is even, otherwise answer "no".')
 
     for _ in range(3):
-        question_number = randint(1, 100)
+        question_number = randbelow(100) + 1
         print(f"Question: {question_number}")
         right_answer = "yes" if question_number % 2 == 0 else "no"
         user_answer = get_answer()
