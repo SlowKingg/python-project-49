@@ -15,9 +15,9 @@ def main() -> None:
     print_rules("even")
 
     for _ in range(3):
-        question_number = randbelow(100) + 1
-        right_answer = "yes" if question_number % 2 == 0 else "no"
-        user_answer = get_answer(f"Question: {question_number}")
+        number = randbelow(100) + 1
+        right_answer = "yes" if number % 2 == 0 else "no"
+        user_answer = get_answer(f"Question: {number}")
 
         if not check_answer(str(right_answer), user_answer, name):
             break
