@@ -1,15 +1,20 @@
 from secrets import choice, randbelow
 
-from brain_games.cli import get_answer, welcome_user
+from brain_games.cli import (
+    check_answer,
+    congratulate_user,
+    get_answer,
+    print_rules,
+    welcome_user,
+)
 
 OPERATIONS = ["+", "-", "*"]
 
 
 def main() -> None:
-    print("Welcome to the Brain Games!")
     name = welcome_user()
 
-    print("What is the result of the expression?")
+    print_rules("calc")
 
     for _ in range(3):
         operation = choice(OPERATIONS)
@@ -29,23 +34,14 @@ def main() -> None:
             case _:
                 break
 
-        print(f"Question: {first_number} {operation} {second_number}")
+        user_answer = get_answer(
+            f"Question: {first_number} {operation} {second_number}"
+        )
 
-        user_answer = get_answer()
-
-        if str(right_answer) == user_answer:
-            print("Correct!")
-        else:
-            print(
-                (
-                    f"'{user_answer}' is wrong answer ;(.\n"
-                    f"Correct answer was '{right_answer}'.\n"
-                    f"Let's try again, {name}!"
-                )
-            )
+        if not check_answer(str(right_answer), user_answer, name):
             break
     else:
-        print(f"Congratulations, {name}!")
+        congratulate_user(name)
 
 
 if __name__ == "__main__":
