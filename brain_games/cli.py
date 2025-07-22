@@ -25,6 +25,8 @@ def print_rules(game: str):
             print('Answer "yes" if the number is even, otherwise answer "no".')
         case "calc":
             print("What is the result of the expression?")
+        case "gcd":
+            print("Find the greatest common divisor of given numbers.")
 
 
 def get_answer(question: str) -> str | None:
