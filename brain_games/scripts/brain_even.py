@@ -1,10 +1,11 @@
 from secrets import randbelow
 
 from brain_games.cli import (
-    check_answer,
     congratulate_user,
     get_answer,
+    print_right_message,
     print_rules,
+    print_wrong_message,
     welcome_user,
 )
 
@@ -19,7 +20,10 @@ def main() -> None:
         right_answer = "yes" if number % 2 == 0 else "no"
         user_answer = get_answer(f"Question: {number}")
 
-        if not check_answer(str(right_answer), user_answer, name):
+        if str(right_answer) == user_answer:
+            print_right_message()
+        else:
+            print_wrong_message(user_answer, right_answer, name)
             break
     else:
         congratulate_user(name)

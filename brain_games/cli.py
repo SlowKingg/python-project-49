@@ -42,21 +42,28 @@ def get_answer(question: str) -> str | None:
     return prompt.string("Your answer: ")
 
 
-def check_answer(
-    right_answer: str, user_answer: str | None, name: str | None
-) -> bool:
-    if right_answer == user_answer:
-        print("Correct!")
-        return True
-    else:
-        print(
-            (
-                f"'{user_answer}' is wrong answer ;(.\n"
-                f"Correct answer was '{right_answer}'.\n"
-                f"Let's try again, {name}!"
-            )
+def print_right_message():
+    """Print message for right answer."""
+    print("Correct!")
+
+
+def print_wrong_message(
+    user_answer: str | None, right_answer: str, name: str | None
+):
+    """Print message for wrong answer.
+
+    Args:
+        user_answer (str | None): User answer.
+        right_answer (str): Right answer.
+        name (str | None): User name.
+    """
+    print(
+        (
+            f"'{user_answer}' is wrong answer ;(.\n"
+            f"Correct answer was '{right_answer}'.\n"
+            f"Let's try again, {name}!"
         )
-        return False
+    )
 
 
 def congratulate_user(name: str | None):

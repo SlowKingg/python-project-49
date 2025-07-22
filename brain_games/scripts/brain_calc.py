@@ -1,10 +1,11 @@
 from secrets import choice, randbelow
 
 from brain_games.cli import (
-    check_answer,
     congratulate_user,
     get_answer,
+    print_right_message,
     print_rules,
+    print_wrong_message,
     welcome_user,
 )
 
@@ -22,15 +23,15 @@ def main() -> None:
             case "+":
                 first_number = randbelow(100) + 1
                 second_number = randbelow(100) + 1
-                right_answer = first_number + second_number
+                right_answer = str(first_number + second_number)
             case "-":
                 first_number = randbelow(100) + 1
                 second_number = randbelow(first_number) + 1
-                right_answer = first_number - second_number
+                right_answer = str(first_number - second_number)
             case "*":
                 first_number = randbelow(25) + 1
                 second_number = randbelow(10) + 1
-                right_answer = first_number * second_number
+                right_answer = str(first_number * second_number)
             case _:
                 break
 
@@ -38,7 +39,10 @@ def main() -> None:
             f"Question: {first_number} {operation} {second_number}"
         )
 
-        if not check_answer(str(right_answer), user_answer, name):
+        if right_answer == user_answer:
+            print_right_message()
+        else:
+            print_wrong_message(user_answer, right_answer, name)
             break
     else:
         congratulate_user(name)
