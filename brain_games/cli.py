@@ -27,6 +27,8 @@ def print_rules(game: str):
             print("What is the result of the expression?")
         case "gcd":
             print("Find the greatest common divisor of given numbers.")
+        case "progression":
+            print("What number is missing in the progression?")
 
 
 def get_answer(question: str) -> str | None:

@@ -32,7 +32,7 @@ def gcd_euclidean(a, b):
 def is_valid_answer(
     right_answer: str, user_answer: str | None, name: str | None
 ) -> bool:
-    """Check is answer for question is valid.
+    """Check is answer for question is valid and prints message in console.
 
     Args:
         right_answer (str): Right answer for question.
@@ -112,6 +112,27 @@ def start_gcd_game(name: str | None):
         second_number = randbelow(100) + 1
         right_answer = str(gcd_euclidean(first_number, second_number))
         user_answer = get_answer(f"{first_number} {second_number}")
+
+        if not is_valid_answer(right_answer, user_answer, name):
+            break
+    else:
+        congratulate_user(name)
+
+
+def start_progression_game(name: str | None):
+    """Starts progression game.
+
+    Args:
+        name (str | None): Name of user.
+    """
+    for _ in range(3):
+        start = randbelow(25) + 1
+        step = randbelow(10) + 1
+        progression = [start + x * step for x in range(1, 11)]
+        right_answer = str(choice(progression))
+        user_answer = get_answer(
+            " ".join(map(str, progression)).replace(f"{right_answer}", "..")
+        )
 
         if not is_valid_answer(right_answer, user_answer, name):
             break
