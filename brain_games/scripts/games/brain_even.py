@@ -1,13 +1,8 @@
-from secrets import randbelow
-
 from brain_games.cli import (
-    congratulate_user,
-    get_answer,
-    print_right_message,
     print_rules,
-    print_wrong_message,
     welcome_user,
 )
+from brain_games.engine import start_even_game
 
 
 def main() -> None:
@@ -15,18 +10,7 @@ def main() -> None:
 
     print_rules("even")
 
-    for _ in range(3):
-        number = randbelow(100) + 1
-        right_answer = "yes" if number % 2 == 0 else "no"
-        user_answer = get_answer(f"Question: {number}")
-
-        if str(right_answer) == user_answer:
-            print_right_message()
-        else:
-            print_wrong_message(user_answer, right_answer, name)
-            break
-    else:
-        congratulate_user(name)
+    start_even_game(name)
 
 
 if __name__ == "__main__":
