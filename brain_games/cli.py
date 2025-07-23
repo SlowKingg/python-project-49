@@ -29,6 +29,10 @@ def print_rules(game: str):
             print("Find the greatest common divisor of given numbers.")
         case "progression":
             print("What number is missing in the progression?")
+        case "prime":
+            print(
+                'Answer "yes" if given number is prime. Otherwise answer "no".'
+            )
 
 
 def get_answer(question: str) -> str | None:

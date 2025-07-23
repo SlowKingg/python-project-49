@@ -29,6 +29,24 @@ def gcd_euclidean(a, b):
     return a
 
 
+def is_prime(number: int) -> bool:
+    """
+    Checks if a number is prime using a straightforward brute-force approach.
+
+    Args:
+        number (int): The integer to be checked.
+
+    Returns:
+        bool: True if the number is prime, False otherwise.
+    """
+    if number < 2:
+        return False
+    for i in range(2, number):
+        if number % i == 0:
+            return False
+    return True
+
+
 def is_valid_answer(
     right_answer: str, user_answer: str | None, name: str | None
 ) -> bool:
@@ -133,6 +151,23 @@ def start_progression_game(name: str | None):
         user_answer = get_answer(
             " ".join(map(str, progression)).replace(f"{right_answer}", "..")
         )
+
+        if not is_valid_answer(right_answer, user_answer, name):
+            break
+    else:
+        congratulate_user(name)
+
+
+def start_prime_game(name: str | None):
+    """Starts prime game.
+
+    Args:
+        name (str | None): Name of user.
+    """
+    for _ in range(3):
+        number = randbelow(100) + 1
+        right_answer = "yes" if is_prime(number) else "no"
+        user_answer = get_answer(f"Question: {number}")
 
         if not is_valid_answer(right_answer, user_answer, name):
             break
