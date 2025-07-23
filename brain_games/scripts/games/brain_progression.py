@@ -8,7 +8,7 @@ from brain_games.engine import start_progression_game
 def main() -> None:
     name = welcome_user()
 
-    print_rules("gcd")
+    print_rules("progression")
 
     start_progression_game(name)
 

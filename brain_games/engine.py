@@ -129,7 +129,7 @@ def start_gcd_game(name: str | None):
         first_number = randbelow(100) + 1
         second_number = randbelow(100) + 1
         right_answer = str(gcd_euclidean(first_number, second_number))
-        user_answer = get_answer(f"{first_number} {second_number}")
+        user_answer = get_answer(f"Question: {first_number} {second_number}")
 
         if not is_valid_answer(right_answer, user_answer, name):
             break
@@ -149,7 +149,8 @@ def start_progression_game(name: str | None):
         progression = [start + x * step for x in range(1, 11)]
         right_answer = str(choice(progression))
         user_answer = get_answer(
-            " ".join(map(str, progression)).replace(f"{right_answer}", "..")
+            "Question: "
+            + " ".join(map(str, progression)).replace(f"{right_answer}", "..")
         )
 
         if not is_valid_answer(right_answer, user_answer, name):
