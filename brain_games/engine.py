@@ -40,7 +40,7 @@ def run_game(game_logic):
 
     name = welcome_user()
 
-    print_rules("calc")
+    print_rules(game_logic.__name__.split(".")[-1].split("_")[0])
 
     for _ in range(3):
         question, right_answer = game_logic.round_logic()
