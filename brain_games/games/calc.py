@@ -3,7 +3,7 @@ from secrets import choice, randbelow
 OPERATIONS = ["+", "-", "*"]
 
 
-def round_logic() -> tuple[str, str]:
+def round_logic() -> tuple[str, int]:
     """Generates a question and its correct answer for a Calculation game.
 
     Returns:
@@ -16,16 +16,16 @@ def round_logic() -> tuple[str, str]:
         case "+":
             first_number = randbelow(100) + 1
             second_number = randbelow(100) + 1
-            right_answer = str(first_number + second_number)
+            right_answer = first_number + second_number
         case "-":
             first_number = randbelow(100) + 1
             second_number = randbelow(first_number) + 1
-            right_answer = str(first_number - second_number)
+            right_answer = first_number - second_number
         case "*":
             first_number = randbelow(25) + 1
             second_number = randbelow(10) + 1
-            right_answer = str(first_number * second_number)
+            right_answer = first_number * second_number
         case _:
-            return "", ""
+            return "", 0
 
-    return f"Question: {first_number} {operation} {second_number}", right_answer
+    return f"{first_number} {operation} {second_number}", right_answer

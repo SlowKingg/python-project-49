@@ -45,7 +45,7 @@ def get_answer(question: str) -> str | None:
         str | None: Answer.
     """
 
-    print(question)
+    print("Question: " + question)
 
     return prompt.string("Your answer: ")
 

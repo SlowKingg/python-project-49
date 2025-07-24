@@ -28,4 +28,4 @@ def round_logic() -> tuple[str, str]:
 
     number = randbelow(100) + 1
     right_answer = "yes" if is_prime(number) else "no"
-    return f"Question: {number}", right_answer
+    return f"{number}", right_answer

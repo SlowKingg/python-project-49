@@ -12,4 +12,4 @@ def round_logic() -> tuple[str, str]:
     number = randbelow(100) + 1
     right_answer = "yes" if number % 2 == 0 else "no"
 
-    return f"Question: {number}", right_answer
+    return f"{number}", right_answer

@@ -46,7 +46,7 @@ def run_game(game_logic):
         question, right_answer = game_logic.round_logic()
         user_answer = get_answer(question)
 
-        if not is_valid_answer(right_answer, user_answer, name):
+        if not is_valid_answer(str(right_answer), user_answer, name):
             break
     else:
         congratulate_user(name)

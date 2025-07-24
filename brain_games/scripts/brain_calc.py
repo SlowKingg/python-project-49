@@ -1,9 +1,9 @@
-import brain_games.games.calc_game_logic as game_logic
+import brain_games.games.calc
 from brain_games.engine import run_game
 
 
 def main() -> None:
-    run_game(game_logic)
+    run_game(brain_games.games.calc)
 
 
 if __name__ == "__main__":

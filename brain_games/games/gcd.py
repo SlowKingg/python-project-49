@@ -19,7 +19,7 @@ def gcd_euclidean(a, b):
     return a
 
 
-def round_logic() -> tuple[str, str]:
+def round_logic() -> tuple[str, int]:
     """Generates a question and its correct answer for a GCD game.
 
     Returns:
@@ -29,6 +29,6 @@ def round_logic() -> tuple[str, str]:
 
     first_number = randbelow(100) + 1
     second_number = randbelow(100) + 1
-    right_answer = str(gcd_euclidean(first_number, second_number))
+    right_answer = gcd_euclidean(first_number, second_number)
 
-    return f"Question: {first_number} {second_number}", right_answer
+    return f"{first_number} {second_number}", right_answer
