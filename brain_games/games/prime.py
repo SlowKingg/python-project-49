@@ -1,5 +1,7 @@
 from secrets import randbelow
 
+RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+
 
 def is_prime(number: int) -> bool:
     """Checks if a number is prime using a straightforward brute-force approach.

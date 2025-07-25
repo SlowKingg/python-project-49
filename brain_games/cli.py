@@ -14,27 +14,6 @@ def welcome_user() -> str | None:
     return name
 
 
-def print_rules(game: str):
-    """Prints rules of games.
-
-    Args:
-        game (str): Name of game.
-    """
-    match game:
-        case "even":
-            print('Answer "yes" if the number is even, otherwise answer "no".')
-        case "calc":
-            print("What is the result of the expression?")
-        case "gcd":
-            print("Find the greatest common divisor of given numbers.")
-        case "progression":
-            print("What number is missing in the progression?")
-        case "prime":
-            print(
-                'Answer "yes" if given number is prime. Otherwise answer "no".'
-            )
-
-
 def get_answer(question: str) -> str | None:
     """Gets answer from user to a question.
 

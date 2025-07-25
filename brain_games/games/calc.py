@@ -1,5 +1,6 @@
 from secrets import choice, randbelow
 
+RULES = "What is the result of the expression?"
 OPERATIONS = ["+", "-", "*"]
 
 

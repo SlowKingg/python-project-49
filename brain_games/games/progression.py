@@ -1,5 +1,7 @@
 from secrets import choice, randbelow
 
+RULES = "What number is missing in the progression?"
+
 
 def round_logic() -> tuple[str, int]:
     """Generates a question and its correct answer for a Progression game.

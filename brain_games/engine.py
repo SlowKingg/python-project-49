@@ -2,7 +2,6 @@ from brain_games.cli import (
     congratulate_user,
     get_answer,
     print_right_message,
-    print_rules,
     print_wrong_message,
     welcome_user,
 )
@@ -40,7 +39,7 @@ def run_game(game_logic):
 
     name = welcome_user()
 
-    print_rules(game_logic.__name__.split(".")[-1].split("_")[0])
+    print(game_logic.RULES)
 
     for _ in range(3):
         question, right_answer = game_logic.round_logic()

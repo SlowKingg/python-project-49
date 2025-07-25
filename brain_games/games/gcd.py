@@ -1,5 +1,7 @@
 from secrets import randbelow
 
+RULES = "Find the greatest common divisor of given numbers."
+
 
 def gcd_euclidean(a, b):
     """Calculates the greatest common divisor (GCD) of two integers.

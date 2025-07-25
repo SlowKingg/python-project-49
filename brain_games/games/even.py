@@ -1,5 +1,7 @@
 from secrets import randbelow
 
+RULES = 'Answer "yes" if the number is even, otherwise answer "no".'
+
 
 def round_logic() -> tuple[str, str]:
     """Generates a question and its correct answer for the Even game.
